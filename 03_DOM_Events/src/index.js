@@ -1,7 +1,50 @@
 const bookList = document.querySelector('#book-list');
+const bookForm = document.querySelector("#book-form");
+
 function formatPrice(price) {
   return '$' + Number.parseFloat(price).toFixed(2);
 }
+
+
+//////////////////////////////////////
+// Book Form Event Listener
+//////////////////////////////////////
+
+bookForm.addEventListener('submit', (e)=> 
+{
+  e.preventDefault();
+
+})
+
+const newBook=
+{
+  title:'',
+  author:'',
+  price:'',
+  reivews:[],
+  inventory:0,
+  imageUrl:'',
+}
+
+//form is an html form element
+//data is an object w keys corr to input names
+
+function fillIn(form, data) 
+{
+  form.title.value=data.title;
+  form.author.value=data.author;
+  form.price.value=data.price;
+  form.imageUrl=value=data.imageUrl;
+  form.inventory.value=data.inventory;
+}
+
+fillIn(bookForm, {
+  title: "Designing Data-Intensive applications",
+  author: "Martin Kleppmann",
+  price: "22",
+  imageUrl: "https://m.media-amazon.com/images/I/51ZSpMl1-LL._SX379_BO1,204,203,200_.jpg",
+  inventory: 1
+})
 
 //////////////////////////////////////
 // render functions  (Data => Display)
@@ -54,11 +97,18 @@ function renderBook(book) {
   li.append(img);
 
   const btn = document.createElement('button');
+
+  btn.addEventListener('click', ()=> 
+  {
+    li.remove();
+  })
+
   btn.textContent = 'Delete';
   li.append(btn);
 
   bookList.append(li);
 }
+
 
 
 ////////////////////////////////////////////
@@ -68,4 +118,6 @@ function renderBook(book) {
 renderHeader(bookStore);
 renderFooter(bookStore);
 bookStore.inventory.forEach(renderBook);
+
+
 

@@ -5,7 +5,13 @@ function formatPrice(price) {
   return '$' + Number.parseFloat(price).toFixed(2);
 }
 
+
+debugger;
+
 // create a function called renderBook(book)
+
+
+
 // it will take a book object as an argument
 // and create the html struture for rendering 
 // that book and insert it into our webpage!

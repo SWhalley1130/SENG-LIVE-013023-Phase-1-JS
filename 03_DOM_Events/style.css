@@ -127,3 +127,7 @@ footer {
   width: 100%;
   margin: 3px;
 }
+
+button, [type="submit"] {
+  cursor: pointer;
+}

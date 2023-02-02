@@ -4,18 +4,18 @@ header {
   opacity: 0.8;
 }
 
-header div h1, header div h2 {
+header h1, header h2 {
   text-align: center;
   color: aliceblue;
   text-shadow: 2px 4px #252525;
   font-family: Verdana;
 }
 
-header div h1 {
+header h1 {
   padding: 200px 0 0 0;
 }
 
-header div h2 {
+header h2 {
   color: aliceblue;
   font-style: italic;
 }
@@ -69,5 +69,3 @@ footer {
 footer div p {
   background-color: red;
 }
-
-
